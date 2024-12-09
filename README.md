@@ -15,6 +15,10 @@ Example:
   ./run.sh -i point_clouds/shoe_pc.ply -m poisson -o outputs/shoe_pc.ply
 ```
 
+## Results
+
+Results can be found here: https://github.com/ujjwal-9/mesh-reconstruction/tree/main/outputs
+
 ## Approach
 
 ### Step 1: Floor Detection and Reorientation
