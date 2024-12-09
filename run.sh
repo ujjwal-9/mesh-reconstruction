@@ -18,7 +18,7 @@ usage() {
     echo ""
     echo "Options:"
     echo "  -i, --input FILE       Input point cloud file (PLY format)"
-    echo "  -m, --method METHOD     Reconstruction method (default: poisson)"
+    echo "  -m, --method METHOD    Reconstruction method (default: poisson)"
     echo "                         Available methods: poisson, hole_preserve"
     echo "  -o, --output DIR       Output directory (default: outputs)"
     echo "  -h, --help             Show this help message"
