@@ -24,8 +24,7 @@ usage() {
     echo "  -h, --help             Show this help message"
     echo ""
     echo -e "${GREEN}Example:${NC}"
-    echo "  $0 ../point_clouds/shoe_pc.ply"
-    echo "  $0 -m hole_preserve -o custom_output ../point_clouds/shoe_pc.ply"
+    echo "  $0 -i point_clouds/shoe_pc.ply -m poisson -o outputs/shoe_pc.ply"
 }
 
 # Parse command-line arguments
