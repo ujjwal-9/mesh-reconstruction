@@ -1,4 +1,5 @@
 # Mesh Reconstruction
+Geometric alignment, surface reconstruction.
 
 ## Code Execution
 ```bash
