@@ -15,6 +15,15 @@ Options:
 Example:
   ./run.sh -i point_clouds/shoe_pc.ply -m poisson -o outputs/shoe_pc.ply
 ```
+If above fails due to segmentation fault, it may be due to compute requirements. You can start a jupyter server connected withcolab runtime.
+```bash
+jupyter notebook \
+    --NotebookApp.allow_origin='https://colab.research.google.com' \
+    --port=8888 \
+    --NotebookApp.port_retries=0
+```
+
+open `nbs/reconstructing_mesh.ipynb` and run the code there.
 
 ## Results
 
