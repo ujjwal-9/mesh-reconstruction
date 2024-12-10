@@ -2,6 +2,14 @@
 Geometric alignment, surface reconstruction.
 
 ## Code Execution
+
+**Install requirements:**
+```bash
+pip install requirements.txt
+```
+
+**Run reconstruction:**
+
 ```bash
 Usage: ./run.sh [options] <input_file>
 
