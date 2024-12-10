@@ -15,7 +15,39 @@ Options:
 Example:
   ./run.sh -i point_clouds/shoe_pc.ply -m poisson -o outputs/shoe_pc.ply
 ```
-If above fails due to segmentation fault, it may be due to compute requirements. You can start a jupyter server connected withcolab runtime.
+If above fails due to segmentation fault, it may be due to compute requirements. You can change the config here: `src/configs.py`.
+```python
+config = {
+    "reconstruction_method": "poisson",
+    "poisson": {"depth": 7, "prevent_hole_filling": True, "min_density_threshold": 0.1},
+    "hole_preserve": {"depth": 7, "hole_preservation_level": 0.002},
+    "smooth_itr": 3,
+    "voxel_size": 0.005,
+    "radius": 0.05,
+    "max_nn": 200,
+    "nb_neighbors": 10,
+    "std_ratio": 0.02,
+    "distance_threshold": 0.01,
+    "ransac_n": 5,
+    "num_iterations": 1000,
+    "log": True,
+}
+
+thresholds = {
+    "chair_pc": 0.5,
+    "craddle_pc": 1.5,
+    "glove_pc": 0.1,
+    "lamp_pc": 0.1,
+    "pillow_pc": 1,
+    "plant_pc": 1,
+    "shoe_pc": 2.5,
+    "shoe2_pc": 0.1,
+    "stool_pc": 1,
+    "vase_pc": 3,
+}
+```
+
+Another solution is to start a jupyter notebook conntected with colab runtime. open `nbs/reconstructing_mesh.ipynb` and run the code there.
 ```bash
 jupyter notebook \
     --NotebookApp.allow_origin='https://colab.research.google.com' \
@@ -23,7 +55,6 @@ jupyter notebook \
     --NotebookApp.port_retries=0
 ```
 
-open `nbs/reconstructing_mesh.ipynb` and run the code there.
 
 ## Results
 
@@ -86,10 +117,6 @@ Results can be found here: https://github.com/ujjwal-9/mesh-reconstruction/tree/
 #### 2. **Validation of Floor Reorientation**
 - The transformed point cloud is passed through the pipeline, and the alignment of the floor plane is verified.
 - Metrics such as the alignment of the floor normal to `[0, -1, 0]` and the position of the centroid at the origin are used as validation criteria.
-
-#### 3. **Comparison of Results**
-- Before-and-after visualizations of the point cloud ensure that the transformations and reconstructions were applied correctly.
-- The aligned point cloud and reconstructed mesh are evaluated for consistency and visual fidelity.
 ---
 
 ## Where the Approach Works Well
