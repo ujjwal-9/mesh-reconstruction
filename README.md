@@ -122,6 +122,14 @@ Results can be found here: https://github.com/ujjwal-9/mesh-reconstruction/tree/
 
 #### 2. **Hybrid Reconstruction**
 - Combine Poisson reconstruction with other techniques like Delaunay triangulation to better preserve fine details and handle sparse regions.
+
+#### 3. **Deep Learning based Reconstruction**
+Some recent advances in DL based reconstruction is promising:
+1. GeoUDF(2023), uses unsigned distance fields to build surfaces from sparse point clouds. It works well with complex shapes and open surfaces.
+2. PPSurf(2024), combines point convolutions with local patches. This approach handles noise and keeps surface details intact.
+3. GridPull(2023), focuses on large-scale data. It uses grids instead of neural networks to reconstruct surfaces efficiently.
+4. Sparse Convolutional Networks are another option. They handle noisy point clouds and improve the speed and quality of reconstruction.
+
 ---
 
 ### Conclusion
